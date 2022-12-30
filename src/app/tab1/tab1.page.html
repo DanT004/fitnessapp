@@ -7,5 +7,113 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
- 
+
+  <div class="logo">
+    <h3>M.G.F</h3>
+  </div>
+
+  <ion-card class="greeting">
+    <ion-grid>
+      <ion-row class="ion-align-items-center">
+        <ion-col size="auto">
+          <ion-avatar>
+            <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+          </ion-avatar>
+        </ion-col>
+        <ion-col>
+          <ion-card-header>
+
+            <ion-card-title>Welcome Back!</ion-card-title>
+            <ion-card-subtitle>#name</ion-card-subtitle>
+          </ion-card-header>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+      </ion-col>
+      <ion-col>
+        <ion-button shape="round" color="tertiary">Create A Workout</ion-button>
+      </ion-col>
+      <ion-col>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Today's Workout</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>Item</ion-label>
+          <ion-button fill="clear"><ion-icon name="trash-outline"></ion-icon></ion-button>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Item</ion-label>
+          <ion-button fill="clear"><ion-icon name="trash-outline"></ion-icon></ion-button>
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-label>Item</ion-label>
+        </ion-item>
+      </ion-list>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-button shape="round" color="medium">Save</ion-button>
+          </ion-col>
+          <ion-col></ion-col>
+          <ion-col>
+            <ion-button shape="round" color="medium">Clear</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Previous Workouts:</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>Item</ion-label>
+          <ion-button fill="clear"><ion-icon name="trash-outline"></ion-icon></ion-button>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Item</ion-label>
+          <ion-button fill="clear"><ion-icon name="trash-outline"></ion-icon></ion-button>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Item</ion-label>
+          <ion-button fill="clear"><ion-icon name="trash-outline"></ion-icon></ion-button>
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-label>Item</ion-label>
+        </ion-item>
+      </ion-list>
+      <ion-grid>
+        <ion-row>
+          <ion-col></ion-col>
+          <ion-col>
+            <ion-button shape="round" color="tertiary">See All</ion-button>
+          </ion-col>
+          <ion-col></ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+
 </ion-content>
