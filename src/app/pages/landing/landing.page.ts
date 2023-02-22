@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { Preferences } from '@capacitor/preferences';
+
 
 @Component({
   selector: 'app-landing',
@@ -6,10 +9,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./landing.page.scss'],
 })
 export class LandingPage implements OnInit {
+	
 
-  constructor() { }
+  constructor(private router: Router) { }
+
+//  login() {
+//     this.route.navigate(['/login']);
+//   }
 
   ngOnInit() {
   }
 
+  async login() {
+    await Preferences.set({ key: 'LANDING_KEY', value: 'true' });
+    this.router.navigateByUrl('/login', { replaceUrl: true});
+  }
+
+ 
 }

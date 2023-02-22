@@ -8,7 +8,10 @@
 
 <ion-content [fullscreen]="true">
 
- <ion-card class="greeting">
+<h1>Exercises</h1>
+
+
+ <ion-card class="greeting" (click)="warmup_list()">
     <ion-grid>
       <ion-row class="ion-align-items-center">
         <ion-col size="auto">
@@ -28,7 +31,7 @@
     </ion-grid>
   </ion-card>
 
-  <ion-card class="greeting">
+  <ion-card class="greeting" (click)="lowerbody_list()">
     <ion-grid>
       <ion-row class="ion-align-items-center">
         <ion-col size="auto">
@@ -48,7 +51,7 @@
     </ion-grid>
   </ion-card>
 
-  <ion-card class="greeting">
+  <ion-card class="greeting" (click)="upperbody_list()">
     <ion-grid>
       <ion-row class="ion-align-items-center">
         <ion-col size="auto">

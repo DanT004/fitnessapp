@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab2',
@@ -7,6 +8,19 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  constructor(private route:Router) {}
+
+
+  warmup_list(){
+    this.route.navigate(['/warmup-list']);
+  }
+
+  lowerbody_list(){
+    this.route.navigate(['/lowerbody-list']);
+  }
+
+  upperbody_list(){
+    this.route.navigate(['/upperbody-list']);
+  }
 
 }
