@@ -7,14 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { WarmupListPageRoutingModule } from './warmup-list-routing.module';
 
 import { WarmupListPage } from './warmup-list.page';
+import { ExerciseComponent } from "../../components/exercise/exercise.component";
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    WarmupListPageRoutingModule
-  ],
-  declarations: [WarmupListPage]
+    declarations: [WarmupListPage],
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        WarmupListPageRoutingModule,
+        ExerciseComponent
+    ]
 })
 export class WarmupListPageModule {}
