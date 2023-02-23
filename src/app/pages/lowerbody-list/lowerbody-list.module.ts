@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { LowerbodyListPageRoutingModule } from './lowerbody-list-routing.module';
 
 import { LowerbodyListPage } from './lowerbody-list.page';
+import { ExerciseComponent } from "../../components/exercise/exercise.component";
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LowerbodyListPageRoutingModule
+    LowerbodyListPageRoutingModule,
+    ExerciseComponent
   ],
   declarations: [LowerbodyListPage]
 })

@@ -1,4 +1,4 @@
-import { AuthGuard } from './guards/auth.guard';
+
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { LandingGuard } from './guards/landing.guard';
@@ -22,7 +22,7 @@ const routes: Routes = [
   {
     path: 'tabs',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule),
-    canLoad: [AuthGuard]
+    
   },
   {
     path: 'prev-exe',

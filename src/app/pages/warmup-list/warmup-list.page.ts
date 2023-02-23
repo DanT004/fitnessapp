@@ -13,9 +13,10 @@ export class WarmupListPage implements OnInit {
   exercises!: Iexercise[];
 
   constructor(private location:Location, private service:ExercisesService) {
-    this.service.getExercise().subscribe((results) => {
+    this.service.getWarmup(1).subscribe((results) => {
       this.exercises = results;
     })
+
   }
   
 
@@ -23,7 +24,7 @@ export class WarmupListPage implements OnInit {
     this.location.back();
   }
 
-  ngOnInit() {
+  ngOnInit(){
   }
 
 }

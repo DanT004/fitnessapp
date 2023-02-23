@@ -17,4 +17,8 @@
 
   </ion-card>
 
+  <div *ngFor="let exercise_item of exercises">
+    <app-exercise [exercise]="exercise_item"></app-exercise>
+    </div>
+
 </ion-content>
