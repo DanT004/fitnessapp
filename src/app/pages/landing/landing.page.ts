@@ -25,5 +25,10 @@ export class LandingPage implements OnInit {
     this.router.navigateByUrl('/login', { replaceUrl: true});
   }
 
+  async signup() {
+    await Preferences.set({ key: 'LANDING_KEY', value: 'true' });
+    this.router.navigateByUrl('/signup', { replaceUrl: true});
+  }
+
  
 }
