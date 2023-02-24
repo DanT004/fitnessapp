@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>exercise-page</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+EXERCISE PAGE
+<ion-icon name="chevron-back-circle-outline" class="icon" (click)="back()"></ion-icon>
+
+<div *ngFor="let exercise_item of exercise">
+<app-exercisepage [exercise]="exercise_item"></app-exercisepage>
+</div>
+
+</ion-content>

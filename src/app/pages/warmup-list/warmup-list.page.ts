@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ExercisesService } from 'src/app/services/exercises.service';
 import { Iexercise } from 'src/app/interfaces/iexercise';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-warmup-list',
@@ -12,7 +13,10 @@ export class WarmupListPage implements OnInit {
   
   exercises!: Iexercise[];
 
-  constructor(private location:Location, private service:ExercisesService) {
+  constructor(private location:Location, 
+    private service:ExercisesService,
+    private router:Router,
+    ) {
     this.service.getExercise(1).subscribe((results) => {
       this.exercises = results;
     })
@@ -25,7 +29,7 @@ export class WarmupListPage implements OnInit {
   }
 
   exercisePage(){
-    
+      this.router.navigateByUrl('/exercise-page', {replaceUrl: true});
   }
 
   ngOnInit(){
