@@ -5,23 +5,31 @@
 </ion-header>
 
 <ion-content>
+
+    <h1 class="ion-text-center">Welcome Back!</h1>
+    <h6 class="ion-text-center">Please Log in or Sign Up to continue</h6>
+ 
+    <ion-card class="imgcard">
+      <img class="img" alt="login" src="https://images.unsplash.com/photo-1591311630200-ffa9120a540f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1410&q=80" />
+    </ion-card>
+
+
   <form [formGroup]="loginForm">
     <div class="input-group">
-      <ion-item>
-        <ion-label>Email</ion-label>
+      <ion-item color="dark">
+        <ion-label position="stacked">Email</ion-label>
         <ion-input type="email" placeholder="Enter Email" formControlName="email"></ion-input>
-     
-
-       
       </ion-item>
 
-      <ion-item>
-        <ion-label>Password</ion-label>
+      <ion-item color="dark">
+        <ion-label position="stacked">Password</ion-label>
         <ion-input type="password" placeholder="Enter Password" formControlName="password"></ion-input>
       </ion-item>
     </div>
 
     <ion-button expand="block" color="tertiary" (click)="login()">Login</ion-button>
     <ion-button expand="block" color="light" (click)="signup()">Not yet a member? Sign Up!</ion-button>
-</form>
+  </form>
+
+
 </ion-content>
