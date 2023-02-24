@@ -24,6 +24,10 @@ export class WarmupListPage implements OnInit {
     this.location.back();
   }
 
+  exercisePage(){
+    
+  }
+
   ngOnInit(){
   }
 

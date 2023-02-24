@@ -1,0 +1,31 @@
+ion-content::part(background){
+    background: #F4F5F9;
+}
+
+h1{
+    color: #364356;
+    margin-bottom: 25px;
+}
+
+.imgcard{
+    width: 254px;
+    height: 155px;
+    border-radius: 7%;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.input-group {
+	background: #fff;
+	border-radius: 10px;
+	overflow: hidden;
+	margin-bottom: 15px;
+    margin-right: 15px;
+    color: #364356;
+}
+
+.btn{
+    width: 300px;
+    margin: auto;
+    margin-bottom: 15px;
+}

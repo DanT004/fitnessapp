@@ -5,32 +5,42 @@
 </ion-header>
 
 <ion-content>
+
+  <h1 class="ion-text-center">Sign Up Here!</h1>
+
+  <ion-card class="imgcard">
+    <img class="img" alt="login" src="https://images.unsplash.com/photo-1590239926044-4131f5d0654d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1391&q=80" />
+  </ion-card>
+
   <form [formGroup]="signupForm">
-    <ion-list>
-      <ion-item>
-        <ion-label>First Name</ion-label>
+    <div class="input-group">
+      <ion-item color="dark">
+        <ion-label position="stacked">First Name</ion-label>
         <ion-input type="email" placeholder="Enter First Name" formControlName="first_name"></ion-input>
       </ion-item>
-      <ion-item>
-        <ion-label>Last Name</ion-label>
+
+      <ion-item color="dark">
+        <ion-label position="stacked">Last Name</ion-label>
         <ion-input type="email" placeholder="Enter Last Name" formControlName="last_name"></ion-input>
       </ion-item>
-      <ion-item>
-        <ion-label>Contact Number</ion-label>
+
+      <ion-item color="dark">
+        <ion-label position="stacked">Contact Number</ion-label>
         <ion-input type="email" placeholder="Enter Number" formControlName="contact"></ion-input>
       </ion-item>
-      <ion-item>
-        <ion-label>Email</ion-label>
+
+      <ion-item color="dark">
+        <ion-label position="stacked">Email</ion-label>
         <ion-input type="email" placeholder="Enter Email" formControlName="email"></ion-input>
       </ion-item>
 
-      <ion-item>
-        <ion-label>Password</ion-label>
+      <ion-item color="dark">
+        <ion-label position="stacked">Password</ion-label>
         <ion-input type="password" placeholder="Enter Password" formControlName="password"></ion-input>
       </ion-item>
-    </ion-list>
+    </div>
 
-    <ion-button expand="block" (click)="signup()">Sign Up</ion-button>
-    <ion-button expand="block" color="tertiary" (click)="login()">Already a member? Login!</ion-button>
+    <ion-button class="btn" expand="block" color="tertiary" (click)="signup()">Sign Up</ion-button>
+    <ion-button class="btn" expand="block" fill="clear" color="tertiary" (click)="login()">Already a member? Login!</ion-button>
     </form>
 </ion-content>
