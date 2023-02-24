@@ -10,6 +10,9 @@ export class Tab3Page {
 
   constructor(private router:Router) {}
 
-
+  logout(){
+    localStorage.removeItem("currentUser");
+    this.router.navigate(['login']);
+  }
 
 }

@@ -5,5 +5,19 @@
 </ion-header>
 
 <ion-content>
+  <form [formGroup]="loginForm">
+    <ion-list>
+      <ion-item>
+        <ion-label>Email</ion-label>
+        <ion-input type="email" placeholder="Enter Email" formControlName="email"></ion-input>
+      </ion-item>
 
+      <ion-item>
+        <ion-label>Password</ion-label>
+        <ion-input type="password" placeholder="Enter Password" formControlName="password"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-button expand="block" (click)="login()">Login</ion-button>
+</form>
 </ion-content>
