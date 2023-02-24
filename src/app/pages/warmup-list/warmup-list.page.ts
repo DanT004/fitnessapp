@@ -13,7 +13,7 @@ export class WarmupListPage implements OnInit {
   exercises!: Iexercise[];
 
   constructor(private location:Location, private service:ExercisesService) {
-    this.service.getWarmup(1).subscribe((results) => {
+    this.service.getExercise(1).subscribe((results) => {
       this.exercises = results;
     })
 

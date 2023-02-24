@@ -13,7 +13,7 @@ export class UpperbodyListPage implements OnInit {
   exercises!: Iexercise[];
 
   constructor(private location:Location, private service:ExercisesService) {
-    this.service.getUpper(3).subscribe((results) => {
+    this.service.getExercise(3).subscribe((results) => {
       this.exercises = results;
     })
   }
