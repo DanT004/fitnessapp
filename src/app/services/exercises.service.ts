@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Iexercise } from '../interfaces/iexercise';
 
 @Injectable({
@@ -7,7 +8,9 @@ import { Iexercise } from '../interfaces/iexercise';
 })
 export class ExercisesService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,
+    
+    ) { }
 
   getExercise(exe_cat_id:number){
     return this.http.get<Iexercise[]>(`http://localhost:3000/exercises/${exe_cat_id}`);

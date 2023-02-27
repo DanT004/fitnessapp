@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Iexercise } from 'src/app/interfaces/iexercise';
 import { ExercisesService } from 'src/app/services/exercises.service';
 import { resourceLimits } from 'worker_threads';
 import { Location } from '@angular/common';
+import { title } from 'process';
 
 
 @Component({
@@ -18,9 +19,10 @@ export class ExercisePagePage implements OnInit {
   constructor(
     private router:Router,
     private service:ExercisesService,
-    private location:Location
+    private location:Location,
+    
     ) {
-  
+     
      }
 
   ngOnInit(): void {
