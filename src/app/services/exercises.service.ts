@@ -7,7 +7,7 @@ import { Iexercise } from '../interfaces/iexercise';
   providedIn: 'root'
 })
 export class ExercisesService {
-
+  
   constructor(private http:HttpClient,
     
     ) { }
@@ -17,11 +17,8 @@ export class ExercisesService {
   }
 
   getExeInfo(id:number){
-    return this.http.get<Iexercise[]>(`http://localhost:3000/exercises/${id}`);
+    return this.http.get<Iexercise[]>(`http://localhost:3000/exercise/${id}`);
   }
 
-  // getCurrentExe(){
-  //   return JSON.parse(localStorage.getItem('currentExe')!);
-  // }
 
 }

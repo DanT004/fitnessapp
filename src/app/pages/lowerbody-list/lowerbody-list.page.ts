@@ -26,8 +26,8 @@ export class LowerbodyListPage implements OnInit {
     this.location.back();
   }
 
-  exercisePage(){
-    this.router.navigateByUrl('/exercise-page', {replaceUrl: true});
+  exercisePage(item: any){
+    this.router.navigate(['/exercise-page', {data: JSON.stringify(item)}]);
 }
 
   ngOnInit() {

@@ -18,8 +18,9 @@
   </ion-card>
 
   
-    <div *ngFor="let exercise_item of exercises" (click)="exercisePage()">
+    <div *ngFor="let exercise_item of exercises" (click)="exercisePage(exercise_item)" >
       <app-exercise [exercise]="exercise_item"></app-exercise>
+      
       </div>
  
   

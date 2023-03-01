@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { Iexercise } from 'src/app/interfaces/iexercise';
+import { DomSanitizer,SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   standalone: true,
@@ -11,10 +12,16 @@ import { Iexercise } from 'src/app/interfaces/iexercise';
 })
 export class ExercisepageComponent implements OnInit {
 
+  vidUrl!: SafeResourceUrl;
+
   @Input() exercise!:Iexercise
 
-  constructor() { }
+  constructor(private domSanitizer:DomSanitizer) { 
 
-  ngOnInit() {}
+  }
+
+  ngOnInit() {
+    this.vidUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(this.exercise.video);
+  }
 
 }

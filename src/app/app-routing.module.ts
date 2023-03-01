@@ -38,6 +38,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/exercise-page/exercise-page.module').then( m => m.ExercisePagePageModule)
   },
   {
+    path: 'exercise-page/:id',
+    loadChildren: () => import('./pages/exercise-page/exercise-page.module').then( m => m.ExercisePagePageModule)
+  },
+  {
     path: 'upperbody-list',
     loadChildren: () => import('./pages/upperbody-list/upperbody-list.module').then(m => m.UpperbodyListPageModule)
   },

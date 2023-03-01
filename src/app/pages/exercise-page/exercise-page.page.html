@@ -5,22 +5,14 @@
 </ion-header>
 
 <ion-content>
-EXERCISE PAGE
-<ion-icon name="chevron-back-circle-outline" class="icon" (click)="back()"></ion-icon>
+  EXERCISE PAGE
+  <ion-icon name="chevron-back-circle-outline" class="icon" (click)="back()"></ion-icon>
 
 
 
-<!-- <ion-card-header>
 
-  <ion-card-title>{{ exercise.title }}</ion-card-title>
-   
-</ion-card-header>
-
-<ion-card>
-  {{ exercise.video }}
-</ion-card> -->
-<div *ngFor="let exercise_item of exercise">
-<app-exercisepage [exercise]="exercise_item"></app-exercisepage>
-</div>
+  <div *ngFor="let exercise_item of exercise">
+    <app-exercisepage [exercise]="exercise_item"></app-exercisepage>
+  </div>
 
 </ion-content>

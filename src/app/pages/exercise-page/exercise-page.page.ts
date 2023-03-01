@@ -5,6 +5,8 @@ import { ExercisesService } from 'src/app/services/exercises.service';
 import { resourceLimits } from 'worker_threads';
 import { Location } from '@angular/common';
 import { title } from 'process';
+import { NavParams } from '@ionic/angular';
+import { __param } from 'tslib';
 
 
 @Component({
@@ -14,25 +16,37 @@ import { title } from 'process';
 })
 export class ExercisePagePage implements OnInit {
 
-  exercise!: Iexercise[];
+  exercise!: Iexercise[] | any;
+  item: any;
 
   constructor(
-    private router:Router,
-    private service:ExercisesService,
-    private location:Location,
-    
-    ) {
-     
-     }
+    private router: Router,
+    private service: ExercisesService,
+    private location: Location,
+    private activatedRoute: ActivatedRoute
+  ) {
 
-  ngOnInit(): void {
-    // let exeData = this.service.getCurrentExe();
-    // this.service.getExeInfo(exeData.id).subscribe((result) =>{
-    //   this.exercise = result;
+    let data:any = this.activatedRoute.snapshot.paramMap.get('data');
+    this.item = JSON.parse(data);
+    console.log(this.item)
+    // this.route.queryParams.subscribe(params => {
+    //   console.log('params: ', params);
+    //   if (params && params['special']) {
+    //     this.exercise = JSON.parse(params['special']);
+    //   }
     // })
+     this.service.getExeInfo(this.item.id).subscribe((result) => {
+          this.exercise = result;
+          console.log(result)
+        });
   }
 
-  back(){
+
+  ngOnInit(): void {
+
+  }
+
+  back() {
     this.location.back();
     // this.router.navigateByUrl('/warmup-list', {replaceUrl: true});
   }
