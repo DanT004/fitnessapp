@@ -8,8 +8,8 @@
 
 <ion-content [fullscreen]="true">
  
-  <ion-card>
-    <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+  <ion-card *ngFor="let user of user">
+    <img alt="Silhouette of mountains" src="{{ user.img }}" />
   </ion-card>
 
   <ion-button expand="full" (click)="logout()" >Logout</ion-button>

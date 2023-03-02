@@ -6,23 +6,24 @@
 
 <ion-content>
 
-  <ion-card >
+  <ion-card>
 
     <ion-card-header>
-      <img class="bg" src="https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80">
+      <img class="bg"
+        src="https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80">
       <ion-card-title>Warm Up</ion-card-title>
     </ion-card-header>
-    
+
     <ion-icon name="chevron-back-circle-outline" class="icon" (click)="back()"></ion-icon>
-    
+
   </ion-card>
 
-  
-    <div *ngFor="let exercise_item of exercises" (click)="exercisePage(exercise_item)" >
-      <app-exercise [exercise]="exercise_item"></app-exercise>
-      
-      </div>
- 
-  
-  
+
+  <div *ngFor="let exercise_item of exercises" (click)="exercisePage(exercise_item)">
+    <app-exercise [exercise]="exercise_item"></app-exercise>
+
+  </div>
+
+
+
 </ion-content>

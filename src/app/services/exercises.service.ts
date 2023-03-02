@@ -16,6 +16,10 @@ export class ExercisesService {
     return this.http.get<Iexercise[]>(`http://localhost:3000/exercises/${exe_cat_id}`);
   }
 
+  getAllExercises(){
+    return this.http.get<Iexercise[]>(`http://localhost:3000/exercises`);
+  }
+
   getExeInfo(id:number){
     return this.http.get<Iexercise[]>(`http://localhost:3000/exercise/${id}`);
   }
