@@ -29,19 +29,11 @@ export class WarmupListPage implements OnInit {
 
   exercisePage(item: any) {
     this.router.navigate(['/exercise-page', {data: JSON.stringify(item)}]);
-    // let NavigationExtras: NavigationExtras = {
-    //   queryParams: {
-    //     special: JSON.stringify(this.exercises[''])
-    //   }
-    // }
-    // this.router.navigate(['/exercise-page'], NavigationExtras)
-    // console.log(this.exercises)
-    
   }
 
 
   back() {
-    this.location.back();
+    this.router.navigate(['/tabs/tab2'])
   }
 
 

@@ -4,4 +4,5 @@ export interface Iexercise {
     title:string;
     img:string;
     video:string;
+    info:string;
 }

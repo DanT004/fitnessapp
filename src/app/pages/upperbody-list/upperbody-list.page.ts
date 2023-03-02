@@ -22,7 +22,7 @@ export class UpperbodyListPage implements OnInit {
     })
   }
   back(){
-    this.location.back();
+    this.router.navigate(['/tabs/tab2'])
   }
 
   exercisePage(item: any){

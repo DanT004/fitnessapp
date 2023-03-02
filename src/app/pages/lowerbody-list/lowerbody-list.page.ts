@@ -23,7 +23,7 @@ export class LowerbodyListPage implements OnInit {
   }
 
   back(){
-    this.location.back();
+    this.router.navigate(['/tabs/tab2'])
   }
 
   exercisePage(item: any){

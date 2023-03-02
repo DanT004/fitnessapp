@@ -26,19 +26,14 @@ export class ExercisePagePage implements OnInit {
     private activatedRoute: ActivatedRoute
   ) {
 
-    let data:any = this.activatedRoute.snapshot.paramMap.get('data');
+    let data: any = this.activatedRoute.snapshot.paramMap.get('data');
     this.item = JSON.parse(data);
     console.log(this.item)
-    // this.route.queryParams.subscribe(params => {
-    //   console.log('params: ', params);
-    //   if (params && params['special']) {
-    //     this.exercise = JSON.parse(params['special']);
-    //   }
-    // })
-     this.service.getExeInfo(this.item.id).subscribe((result) => {
-          this.exercise = result;
-          console.log(result)
-        });
+
+    this.service.getExeInfo(this.item.id).subscribe((result) => {
+      this.exercise = result;
+      console.log(result)
+    });
   }
 
 
@@ -48,7 +43,7 @@ export class ExercisePagePage implements OnInit {
 
   back() {
     this.location.back();
-    // this.router.navigateByUrl('/warmup-list', {replaceUrl: true});
+
   }
 
 }
