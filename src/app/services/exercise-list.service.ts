@@ -10,11 +10,11 @@ export class ExerciseListService {
   constructor(private http:HttpClient) { }
 
   getList(){
-    return this.http.get<Ilist[]>("http:..localhost:3000/todays_workout");
+    return this.http.get<Ilist[]>(`http://localhost:3000/todays_workout`);
   }
 
-  createList(listData:any){
-    return this.http.post(`http://localhost:3000/todays_workout`, listData); 
+  createList(formData:any){
+    return this.http.post(`http://localhost:3000/todays_workout`, formData); 
   }
 
   deleteList(id:number){

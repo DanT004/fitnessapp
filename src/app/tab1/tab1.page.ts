@@ -1,11 +1,16 @@
 import { Component, Input, ViewChild } from '@angular/core';
 import { IonModal } from '@ionic/angular';
-import { InfiniteScrollCustomEvent, OverlayEventDetail } from '@ionic/core';
+import { OverlayEventDetail } from '@ionic/core';
 import { Users } from '../interfaces/users';
 import { CurrentUserService } from '../services/current-user.service';
 import { ExercisesService } from '../services/exercises.service';
 import { UsersService } from '../services/users.service';
 import { Iexercise } from 'src/app/interfaces/iexercise';
+import { Ilist } from '../interfaces/ilist';
+import { ExerciseListService } from '../services/exercise-list.service';
+import { FormArray, FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+
+
 
 @Component({
   selector: 'app-tab1',
@@ -14,12 +19,14 @@ import { Iexercise } from 'src/app/interfaces/iexercise';
 })
 export class Tab1Page {
 
+  listForm;
+
   @ViewChild(IonModal) modal!: IonModal;
 
   user!: Users[] | any;
   name: any;
   message: any;
-  items:any = [];
+  items: any[] = [];
   exercises1!: Iexercise[];
   exercises2!: Iexercise[];
   exercises3!: Iexercise[];
@@ -29,8 +36,25 @@ export class Tab1Page {
   constructor(private userService: UsersService,
     private currentUser: CurrentUserService,
     private service: ExercisesService,
-
+    private listService: ExerciseListService,
+    private formBuilder: FormBuilder,
   ) {
+    
+    
+    this.listForm = formBuilder.group({
+      t1:[this.items[1]],
+      t2:[this.items[2]],
+      t3:[this.items[3]],
+      t4:[this.items[4]],
+      t5:[this.items[5]],
+      t6:[this.items[6]],
+      t7:[this.items[7]],
+      t8:[this.items[8]],
+      t9:[this.items[9]],
+      t10:[this.items[10]],
+      t11:[this.items[11]],
+    });
+
     let userData = this.userService.get_current_user();
     this.currentUser.getUserInfo(userData.user_id).subscribe((result: any) => {
       this.user = result;
@@ -53,8 +77,9 @@ export class Tab1Page {
     });
   }
 
-  cancel() {
+  cancel(): void {
     this.modal.dismiss(null, 'cancel');
+    this.items = [];
   }
 
   confirm() {
@@ -68,9 +93,26 @@ export class Tab1Page {
     }
   }
 
+
   addToList(item:any){
-    JSON.stringify(item);
-    console.log(item)
+    this.items.push(item.title);
+    console.log(this.items)
   }
 
+  save(){
+   
+    this.listService.createList(this.listForm.value).subscribe((result) =>{
+      console.log(result);
+    } )
+    
+    console.log(this.listForm.value);
+  }
+
+  clear():void{
+    this.items = [];
+  }
+
+  logForm(){
+    console.log()
+  }
 }

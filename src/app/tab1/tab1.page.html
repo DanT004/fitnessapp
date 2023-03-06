@@ -74,7 +74,7 @@
                         <div class="ion-padding" slot="content">
 
                           <ion-list>
-                            <ion-item *ngFor="let exercise of exercises1; let index" (click)="addToList(exercise)">
+                            <ion-item *ngFor="let exercise of exercises1" (click)="addToList(exercise)">
                               <ion-avatar slot="start">
                                 <img src="{{ exercise.img }}" alt="avatar" />
                               </ion-avatar>
@@ -96,7 +96,7 @@
                         <div class="ion-padding" slot="content">
 
                           <ion-list>
-                            <ion-item *ngFor="let exercise of exercises2; let index">
+                            <ion-item *ngFor="let exercise of exercises2" (click)="addToList(exercise)">
                               <ion-avatar slot="start">
                                 <img src="{{ exercise.img }}" alt="avatar" />
                               </ion-avatar>
@@ -117,7 +117,7 @@
                         <div class="ion-padding" slot="content">
 
                           <ion-list>
-                            <ion-item *ngFor="let exercise of exercises3; let index">
+                            <ion-item *ngFor="let exercise of exercises3" (click)="addToList(exercise)">
                               <ion-avatar slot="start">
                                 <img src="{{ exercise.img }}" alt="avatar" />
                               </ion-avatar>
@@ -145,30 +145,43 @@
     </ion-row>
   </ion-grid>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Today's Workout</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-list >
-        <ion-item> 
-          <ion-label>name</ion-label>
-          <ion-button fill="clear"><ion-icon name="trash-outline"></ion-icon></ion-button>
-        </ion-item>
-      </ion-list>
-      <ion-grid>
-        <ion-row>
-          <ion-col>
-            <ion-button shape="round" color="medium">Save</ion-button>
-          </ion-col>
-          <ion-col></ion-col>
-          <ion-col>
-            <ion-button shape="round" color="medium">Clear</ion-button>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-card-content>
-  </ion-card>
+  <form [formGroup]="listForm">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Today's Workout:</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list *ngIf="items.length > 0">
+
+          <ion-item>
+            <!-- <ion-input type="text" [(ngModel)]="items[i]" [ngModelOptions]="{standalone: true}"></ion-input> -->
+            <ion-input type="text" formControlName="t1" [value]="items[1]"></ion-input><ion-button fill="clear"><ion-icon name="trash-outline"></ion-icon></ion-button></ion-item>
+          <ion-item> <ion-input type="text" formControlName="t2" [value]="items[2]"></ion-input><ion-button fill="clear"><ion-icon name="trash-outline"></ion-icon></ion-button></ion-item>
+          <ion-item> <ion-input type="text" formControlName="t3" [value]="items[3]"></ion-input><ion-button fill="clear"><ion-icon name="trash-outline"></ion-icon></ion-button></ion-item>
+          <ion-item> <ion-input type="text" formControlName="t4" [value]="items[4]"></ion-input><ion-button fill="clear"><ion-icon name="trash-outline"></ion-icon></ion-button></ion-item>
+          <ion-item> <ion-input type="text" formControlName="t5" [value]="items[5]"></ion-input><ion-button fill="clear"><ion-icon name="trash-outline"></ion-icon></ion-button></ion-item>
+          <ion-item> <ion-input type="text" formControlName="t6" [value]="items[6]"></ion-input><ion-button fill="clear"><ion-icon name="trash-outline"></ion-icon></ion-button></ion-item>
+          <ion-item> <ion-input type="text" formControlName="t7" [value]="items[7]"></ion-input><ion-button fill="clear"><ion-icon name="trash-outline"></ion-icon></ion-button></ion-item>
+          <ion-item> <ion-input type="text" formControlName="t8" [value]="items[8]"></ion-input><ion-button fill="clear"><ion-icon name="trash-outline"></ion-icon></ion-button></ion-item>
+          <ion-item> <ion-input type="text" formControlName="t9" [value]="items[9]"></ion-input><ion-button fill="clear"><ion-icon name="trash-outline"></ion-icon></ion-button></ion-item>
+          <ion-item> <ion-input type="text" formControlName="t10" [value]="items[10]"></ion-input><ion-button fill="clear"><ion-icon name="trash-outline"></ion-icon></ion-button></ion-item>
+          <ion-item> <ion-input type="text" formControlName="t11" [value]="items[11]"></ion-input><ion-button fill="clear"><ion-icon name="trash-outline"></ion-icon></ion-button></ion-item>
+          
+        </ion-list>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-button shape="round" color="medium" (click)="save()" type="submit">Save</ion-button>
+            </ion-col>
+            <ion-col></ion-col>
+            <ion-col>
+              <ion-button shape="round" color="medium" (click)="clear()">Clear</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  </form>
 
   <ion-card>
     <ion-card-header>
