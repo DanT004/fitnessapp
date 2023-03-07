@@ -9,15 +9,19 @@ export class ExerciseListService {
 
   constructor(private http:HttpClient) { }
 
-  getList(){
-    return this.http.get<Ilist[]>(`http://localhost:3000/todays_workout`);
+  getList(user_id:number){
+    return this.http.get<Ilist[]>(`http://localhost:3000/workout_list/${user_id}`);
+  }
+
+  getInfo(id:number){
+    return this.http.get<Ilist[]>(`http://localhost:3000/list/${id}`);
   }
 
   createList(formData:any){
-    return this.http.post(`http://localhost:3000/todays_workout`, formData); 
+    return this.http.post(`http://localhost:3000/workout_list`, formData); 
   }
 
   deleteList(id:number){
-    return this.http.delete(`http://localhost:3000/todays_workout/${id}`); 
+    return this.http.delete(`http://localhost:3000/workout_list/${id}`); 
   }
 }

@@ -12,11 +12,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { ExerciseComponent } from './components/exercise/exercise.component';
 import { CommonModule } from '@angular/common';
 
+import { ModalListComponent } from './components/modal-list/modal-list.component';
+
 
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, ExerciseComponent],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, ExerciseComponent,ModalListComponent, CommonModule,],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

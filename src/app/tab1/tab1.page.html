@@ -37,7 +37,8 @@
       <ion-col>
       </ion-col>
       <ion-col>
-        <ion-button shape="round" color="tertiary" id="open-modal" expand="block">Create A Workout</ion-button>
+        <ion-button shape="round" color="tertiary" id="open-modal" expand="block">Click here to Create A
+          Workout</ion-button>
 
         <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
           <ng-template>
@@ -151,22 +152,32 @@
         <ion-card-title>Today's Workout:</ion-card-title>
       </ion-card-header>
       <ion-card-content>
+        <ion-item>
+          <ion-label position="stacked">Workout Title:</ion-label>
+          <ion-input type="text" placeholder="Please enter a Title" formControlName="title"></ion-input>
+          <span *ngIf="titleFormControl.dirty && titleFormControl.errors?.['required']">Please Enter a Workout
+            Title</span>
+          <span *ngIf="titleFormControl.touched && titleFormControl.errors?.['required']">Please Enter a Workout
+            Title</span>
+        </ion-item>
+
         <ion-list *ngIf="items.length > 0">
+
 
           <ion-item>
             <!-- <ion-input type="text" [(ngModel)]="items[i]" [ngModelOptions]="{standalone: true}"></ion-input> -->
-            <ion-input type="text" formControlName="t1" [value]="items[1]"></ion-input><ion-button fill="clear"><ion-icon name="trash-outline"></ion-icon></ion-button></ion-item>
-          <ion-item> <ion-input type="text" formControlName="t2" [value]="items[2]"></ion-input><ion-button fill="clear"><ion-icon name="trash-outline"></ion-icon></ion-button></ion-item>
-          <ion-item> <ion-input type="text" formControlName="t3" [value]="items[3]"></ion-input><ion-button fill="clear"><ion-icon name="trash-outline"></ion-icon></ion-button></ion-item>
-          <ion-item> <ion-input type="text" formControlName="t4" [value]="items[4]"></ion-input><ion-button fill="clear"><ion-icon name="trash-outline"></ion-icon></ion-button></ion-item>
-          <ion-item> <ion-input type="text" formControlName="t5" [value]="items[5]"></ion-input><ion-button fill="clear"><ion-icon name="trash-outline"></ion-icon></ion-button></ion-item>
-          <ion-item> <ion-input type="text" formControlName="t6" [value]="items[6]"></ion-input><ion-button fill="clear"><ion-icon name="trash-outline"></ion-icon></ion-button></ion-item>
-          <ion-item> <ion-input type="text" formControlName="t7" [value]="items[7]"></ion-input><ion-button fill="clear"><ion-icon name="trash-outline"></ion-icon></ion-button></ion-item>
-          <ion-item> <ion-input type="text" formControlName="t8" [value]="items[8]"></ion-input><ion-button fill="clear"><ion-icon name="trash-outline"></ion-icon></ion-button></ion-item>
-          <ion-item> <ion-input type="text" formControlName="t9" [value]="items[9]"></ion-input><ion-button fill="clear"><ion-icon name="trash-outline"></ion-icon></ion-button></ion-item>
-          <ion-item> <ion-input type="text" formControlName="t10" [value]="items[10]"></ion-input><ion-button fill="clear"><ion-icon name="trash-outline"></ion-icon></ion-button></ion-item>
-          <ion-item> <ion-input type="text" formControlName="t11" [value]="items[11]"></ion-input><ion-button fill="clear"><ion-icon name="trash-outline"></ion-icon></ion-button></ion-item>
-          
+            <ion-input type="text" formControlName="t1" [value]="items[1]" clearInput=""></ion-input></ion-item>
+          <ion-item><ion-input type="text" formControlName="t2" [value]="items[2]" clearInput=""></ion-input></ion-item>
+          <ion-item> <ion-input type="text" formControlName="t3" [value]="items[3]" clearInput=""></ion-input></ion-item>
+          <ion-item> <ion-input type="text" formControlName="t4" [value]="items[4]" clearInput=""></ion-input></ion-item>
+          <ion-item> <ion-input type="text" formControlName="t5" [value]="items[5]" clearInput=""></ion-input></ion-item>
+          <ion-item> <ion-input type="text" formControlName="t6" [value]="items[6]" clearInput=""></ion-input></ion-item>
+          <ion-item> <ion-input type="text" formControlName="t7" [value]="items[7]" clearInput=""></ion-input></ion-item>
+          <ion-item> <ion-input type="text" formControlName="t8" [value]="items[8]" clearInput=""></ion-input></ion-item>
+          <ion-item> <ion-input type="text" formControlName="t9" [value]="items[9]" clearInput=""></ion-input></ion-item>
+          <ion-item> <ion-input type="text" formControlName="t10" [value]="items[10]" clearInput=""></ion-input></ion-item>
+          <ion-item> <ion-input type="text" formControlName="t11" [value]="items[11]" clearInput=""></ion-input></ion-item>
+
         </ion-list>
         <ion-grid>
           <ion-row>
@@ -188,25 +199,15 @@
       <ion-card-title>Previous Workouts:</ion-card-title>
     </ion-card-header>
     <ion-card-content>
+
       <ion-list>
-        <ion-item>
-          <ion-label>Item</ion-label>
-          <ion-button fill="clear"><ion-icon name="trash-outline"></ion-icon></ion-button>
+
+        <ion-item *ngFor="let list of lists" (click)="openModal(list)">
+          <ion-label>{{list.title}}</ion-label>
+          <ion-button fill="clear" (click)="deleteEntry(list)"><ion-icon name="trash-outline"></ion-icon></ion-button>
         </ion-item>
 
-        <ion-item>
-          <ion-label>Item</ion-label>
-          <ion-button fill="clear"><ion-icon name="trash-outline"></ion-icon></ion-button>
-        </ion-item>
 
-        <ion-item>
-          <ion-label>Item</ion-label>
-          <ion-button fill="clear"><ion-icon name="trash-outline"></ion-icon></ion-button>
-        </ion-item>
-
-        <ion-item lines="none">
-          <ion-label>Item</ion-label>
-        </ion-item>
       </ion-list>
       <ion-grid>
         <ion-row>

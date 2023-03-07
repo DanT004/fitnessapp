@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button color="medium" (click)="cancel()">Cancel</ion-button>
+    </ion-buttons>
+    <ion-title *ngFor="let list of lists">{{list.title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+    <ion-content class="ion-padding">
+      <ion-list *ngFor="let list of lists" >
+        <ion-item>{{list.t1}}</ion-item>
+        <ion-item>{{list.t2}}</ion-item>
+        <ion-item>{{list.t3}}</ion-item>
+        <ion-item>{{list.t4}}</ion-item>
+        <ion-item>{{list.t5}}</ion-item>
+        <ion-item>{{list.t6}}</ion-item>
+        <ion-item>{{list.t7}}</ion-item>
+        <ion-item>{{list.t8}}</ion-item>
+        <ion-item>{{list.t9}}</ion-item>
+        <ion-item>{{list.t10}}</ion-item>
+        <ion-item>{{list.t11}}</ion-item>
+
+      </ion-list>
+    </ion-content>
