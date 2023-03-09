@@ -7,11 +7,38 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
- 
+
   <ion-card *ngFor="let user of user">
     <img alt="Silhouette of mountains" src="{{ user.img }}" />
   </ion-card>
 
-  <ion-button expand="full" (click)="logout()" >Logout</ion-button>
+  <ion-card>
+    <ion-card-content>
+    <ion-card-title>Personal Information:</ion-card-title>
+  </ion-card-content>
+    <ion-card-content>
+      <ion-list *ngFor="let user of user">
+        <ion-item>
+          <ion-label position="stacked"><h1>First Name:</h1></ion-label>
+          {{ user.first_name }}
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked"><h1>Last Name:</h1></ion-label>
+          {{ user.last_name }}
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked"><h1>Email:</h1></ion-label>
+          {{ user.email }}
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked"><h1>Contact:</h1></ion-label>
+          {{ user.contact }}
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-button expand="full" (click)="logout()">Logout</ion-button>
 
 </ion-content>
