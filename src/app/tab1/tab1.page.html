@@ -1,16 +1,13 @@
 
 <ion-content [fullscreen]="true">
 
-  <div class="logo">
-    <h3>M.G.F</h3>
-  </div>
 
   <ion-card class="greeting" *ngFor="let user of user">
     <ion-grid>
       <ion-row class="ion-align-items-center">
         <ion-col size="auto">
           <ion-avatar>
-            <img alt="Silhouette of a person's head" src="{{ user.img }}" />
+            <img alt="Silhouette of a person's head" src="http://localhost:3000/{{ user.img }}" />
           </ion-avatar>
         </ion-col>
         <ion-col>
@@ -68,7 +65,7 @@
                         <div class="ion-padding" slot="content">
 
                           <ion-list>
-                            <ion-item *ngFor="let exercise of exercises1" (click)="addToList(exercise)">
+                            <ion-item *ngFor="let exercise of exercises1" [button]="true" (click)="addToList(exercise)">
                               <ion-avatar slot="start">
                                 <img src="{{ exercise.img }}" alt="avatar" />
                               </ion-avatar>
@@ -90,7 +87,7 @@
                         <div class="ion-padding" slot="content">
 
                           <ion-list>
-                            <ion-item *ngFor="let exercise of exercises2" (click)="addToList(exercise)">
+                            <ion-item *ngFor="let exercise of exercises2" [button]="true" (click)="addToList(exercise)">
                               <ion-avatar slot="start">
                                 <img src="{{ exercise.img }}" alt="avatar" />
                               </ion-avatar>
@@ -111,7 +108,7 @@
                         <div class="ion-padding" slot="content">
 
                           <ion-list>
-                            <ion-item *ngFor="let exercise of exercises3" (click)="addToList(exercise)">
+                            <ion-item *ngFor="let exercise of exercises3" [button]="true" (click)="addToList(exercise)">
                               <ion-avatar slot="start">
                                 <img src="{{ exercise.img }}" alt="avatar" />
                               </ion-avatar>
@@ -188,7 +185,9 @@
   </form>
 
   <ion-card>
-    
+    <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
     <ion-card-header>
       <ion-card-title>Previous Workouts:</ion-card-title>
     </ion-card-header>
@@ -196,7 +195,7 @@
 
       <ion-list>
 
-        <ion-item *ngFor="let list of lists" (click)="openModal(list)">
+        <ion-item *ngFor="let list of lists" [button]="true" (click)="openModal(list)">
           <ion-label>{{list.title}}</ion-label>
           <ion-button fill="clear" (click)="deleteEntry(list)"><ion-icon name="trash-outline"></ion-icon></ion-button>
         </ion-item>

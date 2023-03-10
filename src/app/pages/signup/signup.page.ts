@@ -12,6 +12,7 @@ import { UsersService } from 'src/app/services/users.service';
 export class SignupPage implements OnInit {
 
   signupForm;
+  selectedImage:any;
 
   constructor(private service:UsersService, 
     private formBuilder: FormBuilder,
@@ -31,16 +32,33 @@ export class SignupPage implements OnInit {
   ngOnInit(): void {
   }
 
+  selectFile(event: any): void {
+    this.selectedImage = event.target.files[0];
+    console.log(this.selectedImage);
+  }
+
   async signup(){
     const loading = await this.loadingController.create();
     await loading.present();
 
-    let formData = this.signupForm.value;
-    this.service.signup(formData).subscribe({
-      next: (result) => {
+    let formData:any = this.signupForm.value;
+    let fd = new FormData();
+    fd.append('img', this.selectedImage);
+
+    for(let key in formData){
+      fd.append(key, formData[key]);
+    }
+
+    this.service.signup(fd).subscribe({
+      next: async (result) => {
       this.loadingController.dismiss();
       this.router.navigateByUrl('/login', {replaceUrl: true});
-      alert('Register successful!');
+      const alert = this.alertController.create({
+          header: 'Sign Up Successful!',
+          message: 'Thank You for Signing up!',
+          buttons: ['OK']
+        });
+        (await alert).present();
     }, error: async error => {
       loading.dismiss();
         const alert = this.alertController.create({

@@ -36,6 +36,7 @@ export class Tab1Page {
   exercises3!: Iexercise[];
   exercises!: Iexercise[];
   lists!: Ilist[] | any;
+  
 
 
   constructor(private userService: UsersService,
@@ -157,5 +158,15 @@ export class Tab1Page {
     let index = this.lists.findIndex((item: { id: any; }) => item.id === this.lists.id);
     this.lists.splice(index, 1);
   }
+
+  handleRefresh(event: any) {
+    setTimeout(() => {
+      let userData = this.userService.get_current_user();
+      this.listService.getList(userData.user_id).subscribe((results) => {
+        this.lists = results;
+      })
+      event.target.complete();
+    }, 2000);
+  };
 
 }

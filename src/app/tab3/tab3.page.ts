@@ -20,7 +20,6 @@ export class Tab3Page {
       let userData = this.userService.get_current_user();
       this.currentUser.getUserInfo(userData.user_id).subscribe((result: any) => {
         this.user = result;
-        console.log(result)
       });
     }
 

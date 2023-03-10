@@ -1,8 +1,4 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>signup</ion-title>
-  </ion-toolbar>
-</ion-header>
+
 
 <ion-content>
 
@@ -32,6 +28,11 @@
       <ion-item color="dark">
         <ion-label position="stacked">Email</ion-label>
         <ion-input type="email" placeholder="Enter Email" formControlName="email"></ion-input>
+      </ion-item>
+
+      <ion-item color="dark">
+        <ion-label position="stacked">Profile Picture</ion-label>
+        <ion-input type="file" (change)="selectFile($event)" accept="image/x-png,image/gif,image/jpeg,image/jpg,image"></ion-input>
       </ion-item>
 
       <ion-item color="dark">
