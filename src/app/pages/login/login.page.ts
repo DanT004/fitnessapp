@@ -17,11 +17,11 @@ export class LoginPage implements OnInit {
   loginForm;
 
   constructor(private service: UsersService,
-     private formBuilder: FormBuilder, 
-     private toastController: ToastController, 
+     private formBuilder: FormBuilder,
      private loadingController: LoadingController, 
      private router: Router, 
-     private alertController: AlertController) {
+     private alertController: AlertController) 
+     {
     this.loginForm = formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(5)]]
